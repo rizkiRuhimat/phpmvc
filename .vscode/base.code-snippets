@@ -1,0 +1,7 @@
+{
+	"baseurl Tag": {
+		"prefix": "burl",
+		"body" : "<?= BASEURL; ?>"
+	}
+
+}

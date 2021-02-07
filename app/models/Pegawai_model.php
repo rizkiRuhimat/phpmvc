@@ -23,4 +23,23 @@ class Pegawai_model
 
         return $this->db->single();
     }
+
+    public function tambahPegawai($data)
+    {
+        $query  =   "INSERT INTO pegawai VALUES ('',:nama,:nip,:telp,:email,:divisi,:kota,:provinsi)";
+
+        $this->db->query($query);
+
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('nip', $data['nip']);
+        $this->db->bind('telp', $data['telp']);
+        $this->db->bind('email', $data['mail']);
+        $this->db->bind('divisi', $data['divisi']);
+        $this->db->bind('kota', $data['kota']);
+        $this->db->bind('provinsi', $data['provinsi']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

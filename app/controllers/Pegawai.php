@@ -36,4 +36,13 @@ class Pegawai extends Controller
         // var_dump($data['pegawai']);
         // die;
     }
+
+    public function tambah()
+    {
+        // var_dump($_POST);
+        if ($this->model('Pegawai_model')->tambahPegawai($_POST) > 0) {
+            header('Location: ' . BASEURL . 'pegawai/');
+            exit;
+        }
+    }
 }
